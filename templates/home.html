@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% from "show_links.html" import show_links %}
+
+{% block title %}Sample Landing Page{% endblock %}
+
+{% block nav %}
+{{ show_links(user) }}
+{% endblock %}
+
+{% block body %}
+
+      <div class="page-header">
+      	<h1 style="color:#ffffff;font-size:40px;font-weight:bold;text-align:left;margin-left:10px">FreeCodeCampers Progress</h1>
+      </div>
+
+      <table style="font-size:20px;width:90%;text-align:left;font-weight:normal;margin-left:10px" border="0">
+	  <tr>
+   		<th>Name</th>
+		<th>Progress Bar</th>
+	  </tr>				   					   			   
+	  {% for fccampers in fccamperslist %}
+	  <tr>
+		<td>{% print fccampers[0] %}</td>
+		<td>{% print fccampers[1] %}</td>
+		<td>{% print fccampers[2] %}</td>
+		<td>{% print fccampers[3] %}</td>
+	  </tr>
+	  {% endfor %}               
+      </table>
+
+{% endblock %}
